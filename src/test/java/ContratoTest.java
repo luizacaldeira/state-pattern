@@ -14,8 +14,6 @@ public class ContratoTest {
         contrato = new Contrato();
     }
 
-    // Contrato pendente
-
     @Test
     public void deveAtivarContratoPendente() {
         contrato.setEstado(ContratoEstadoPendente.getInstance());
@@ -41,8 +39,6 @@ public class ContratoTest {
         assertTrue(contrato.cancelar());
         assertEquals(ContratoEstadoCancelado.getInstance(), contrato.getEstado());
     }
-
-    // Contrato ativo
 
     @Test
     public void naoDeveAtivarContratoAtivo() {
@@ -70,8 +66,6 @@ public class ContratoTest {
         assertEquals(ContratoEstadoCancelado.getInstance(), contrato.getEstado());
     }
 
-    // Contrato suspenso
-
     @Test
     public void naoDeveAtivarContratoSuspenso() {
         contrato.setEstado(ContratoEstadoSuspenso.getInstance());
@@ -97,8 +91,6 @@ public class ContratoTest {
         assertTrue(contrato.cancelar());
         assertEquals(ContratoEstadoCancelado.getInstance(), contrato.getEstado());
     }
-
-    // Contrato cancelado
 
     @Test
     public void naoDeveAtivarContratoCancelado() {
